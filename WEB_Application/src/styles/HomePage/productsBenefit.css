@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1, h2, h3, p {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.custom_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 250px);
+    grid-auto-rows: 200px;
+    gap: 20px;
+    padding: 20px;
+    margin-left: 200px;
+    color: white;
+    width: 80%;
+}
+
+.grid_item {
+    position: relative; 
+    border: 2px solid #0D0D0D;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    border-radius: 5px;
+}
+
+.grid_image {
+    width: 70%;
+}
+
+.overlay {
+    position: absolute;
+    top: 70%; 
+    left: 35%; 
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+    text-align: left;
+    z-index: 2;
+    padding: 20px 40px 50px 10px;
+}
+
+.large {
+    grid-column: 1 / span 2;
+    grid-row: span 2;
+    background-color: black;
+}
+
+.medium {
+    grid-column: 3 / span 2;
+    grid-row: 1 / span 1;
+    background: linear-gradient(135deg, black, #131313);
+    padding-left: 250px;
+}
+
+.small:nth-of-type(3) {
+    grid-column: 3;
+    grid-row: 2;
+    background: radial-gradient(circle, #444444, #000000);
+}
+
+.small:nth-of-type(4) {
+    grid-column: 4;
+    grid-row: 2;
+    background: radial-gradient(circle, #444444, #000000);
+}
+
+
+.small:nth-of-type(3) .grid_image, .small:nth-of-type(4) .grid_image {
+    width: 55%;
+    max-width: 55%;
+    height: auto;
+}
+
+.shop_now {
+    color: white;
+    font-size: 20px; 
+}
+
+.bottom-text {
+    display: flex;
+    padding: 50px 20px;
+    gap: 80px;
+}
+
+.left-section {
+    flex: 2;
+    text-align: left;
+    margin-left: 100px;
+}
+
+.right-section {
+    flex: 2;
+    text-align: left;
+    margin-right: 100px;
+}
+
+.left-section h2 {
+    font-size: 32px;
+}
+
+.right-section p {
+    font-size: 20px;
+}
+
+.feature-item {
+    padding: 10px;
+}
+
+.feature-item h3 {
+    font-size: 24px;
+}
