@@ -1,0 +1,150 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Main Section Layout */
+.mainSection {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    margin: 150px 100px;
+}
+
+/* Typography */
+h1 {
+    font-size: 56px;
+    margin-bottom: 20px; /* Space below h1 */
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px; /* Space below paragraph */
+}
+
+/* Image Styling */
+img {
+    width: 700px;
+    height: 700px;
+    object-fit: cover; /* Ensures the image is properly resized */
+}
+
+.sectionLeft,
+.sectionRight {
+    text-align: left;
+}
+
+.sectionLeft {
+    width: 50%;
+}
+
+.sectionRight {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Button Styles */
+.button {
+    font-size: 20px;
+    padding: 20px;
+    margin-right: 10px; /* Space between buttons */
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: inline-block;
+}
+
+.primary {
+    background-color: #000;
+    color: #fff;
+}
+
+.secondary {
+    background-color: #fff;
+    color: #000;
+}
+
+.primary:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.secondary:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    gap: 30px;
+    padding-top: 10px; /* Aligns the content at the top */
+}
+
+.features p {
+    padding-top: 10px; /* Adds spacing above the paragraph */
+}
+
+.learnMoreLink {
+    font-size: 18px;
+    text-decoration: none;
+    color: #000;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.learnMoreLink:hover {
+    text-decoration: underline;
+}
+
+/* Trending Section Container */
+.trending-container {
+    text-align: center;
+    padding: 50px 0;
+}
+
+/* Main Content Flexbox */
+.trending-content {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: stretch;
+}
+
+/* Individual Trending Items */
+.trending-item {
+    width: 30%;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.trending-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Headings and Text */
+.trending-header {
+    font-size: 42px;
+    margin-bottom: 40px;
+}
+
+.trending-item h2 {
+    margin: 15px 0;
+    font-size: 24px;
+}
+
+.trending-item p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+/* CTA Section */
+.CTASection {
+    display: flex;
+    justify-content: flex-end; /* Moves items to the right */
+}

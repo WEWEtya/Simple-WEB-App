@@ -1,0 +1,40 @@
+.app_container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures footer stays at the bottom */
+  }
+  
+  main {
+    flex: 1; /* Allows content to grow and push footer down */
+    padding: 20px;
+    text-align: center;
+  }
+
+  .button {
+    font-size: 20px;
+    padding: 20px;
+    margin-right: 10px; /* Space between buttons */
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: inline-block;
+}
+
+.primary {
+    background-color: #000;
+    color: #fff;
+}
+
+.secondary {
+    background-color: #fff;
+    color: #000;
+}
+
+.primary:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.secondary:hover {
+    background-color: #000;
+    color: #fff;
+}
