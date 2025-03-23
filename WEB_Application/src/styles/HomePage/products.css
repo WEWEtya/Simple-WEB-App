@@ -1,0 +1,52 @@
+.products_container {
+    padding: 20px;
+    text-align: center;
+}
+
+.products_container h1 {
+    font-size: 75px;
+    margin-bottom: 20px;
+}
+
+.products_container h2 {
+    font-size: 20px;
+    margin-bottom: 70px;
+}
+
+.product_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.product_item {
+    font-size: 14px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product_item:hover {
+    cursor: pointer;
+    border: 1px solid #ddd; 
+    transform: scale(1.05); 
+}
+
+.product_image_wrapper {
+    position: relative;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.products_image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.product_item h3 {
+    margin: 15px 0 5px;
+}
+
+.product_item p {
+    font-size: 22px;
+    margin-bottom: 10px;
+}

@@ -1,9 +1,7 @@
-
-
-
 .category_filter {
     padding: 20px;
 }
+
 .category_title {
     font-size: 48px;
     margin: 50px 0px 40px 150px;
@@ -11,12 +9,12 @@
     text-align: left;
 }
 
-.category_buttons{
+.category_buttons {
     display: flex;
     justify-content: center;
     gap: 30px;
     padding: 20px;
-    flex-wrap: wrap;                   
+    flex-wrap: wrap;
 }
 
 .category_item {
@@ -33,10 +31,27 @@
     font-size: 16px;
 }
 
+.category_icon img {
+    width: 50px !important;
+    height: 50px !important;
+    margin-bottom: 16px;
+}
+
+
 .category_item.active {
     background-color: black;
     color: white;
     border-color: black;
+}
+
+/* Apply filter to image when category item is active */
+.category_item.active .category_icon img {
+    filter: invert(1) grayscale(100%) brightness(100%) !important;
+    transition: filter 0.3s ease;
+}
+
+.category_item.active:hover {
+    color: white;
 }
 
 .category_item:hover {
@@ -49,9 +64,8 @@
     margin-bottom: 8px;
 }
 
-.category_icon img{
+.category_icon img {
     width: 36px;
     height: 36px;
     margin-bottom: 8px;
 }
-

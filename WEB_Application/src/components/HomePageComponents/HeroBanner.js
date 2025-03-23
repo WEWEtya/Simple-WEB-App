@@ -6,9 +6,9 @@ import 'swiper/css/pagination';
 import '../../styles/global.css';
 import '../../styles/HomePage/heroBanner.css';
 
-import iphone from "../../assets/images/HomePage/iphone.png";
-import airpods from "../../assets/images/HomePage/airpods.png";
-import airpods2 from "../../assets/images/HomePage/airpods_2.png";
+import iphone from "../../assets/images/HomePage/HeroBanner/iphone.png";
+import airpods from "../../assets/images/HomePage/HeroBanner/airpods.png";
+import airpods2 from "../../assets/images/HomePage/HeroBanner/airpods_2.png";
 import image1 from "../../assets/images/AboutUs/hehehe.jpg";
 
 const slides = [

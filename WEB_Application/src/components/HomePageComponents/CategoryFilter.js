@@ -1,15 +1,22 @@
 import React, { useState } from "react";
 import '../../styles/HomePage/categoryFilter.css';
 
-import phone_image from "../../assets/images/HomePage/Category-CellPhone.png"
+import PhoneImage from "../../assets/images/HomePage/CategoryFilter/Category-CellPhone.png";
+import ComputerImage from "../../assets/images/HomePage/CategoryFilter/Category-Computer.png";
+import SmartWatchImage from "../../assets/images/HomePage/CategoryFilter/Category-SmartWatch.png"
+import CameraImage from "../../assets/images/HomePage/CategoryFilter/Category-Camera.png"
+import HeadphonesImage from "../../assets/images/HomePage/CategoryFilter/Category-Headphone.png"
+import GamePadImage from "../../assets/images/HomePage/CategoryFilter/Category-Gamepad.png"
+
+
 
 const categories = [
-    {name: "Phones", image: phone_image, icon: "📱"},
-    {name: "Computers", icon: "💻"},
-    {name: "SmartWatch", icon: "⌚"},
-    {name: "Camera", icon: "📷"},
-    {name: "HeadPhones", icon: "🎧"},
-    {name: "Gaming", icon: "🎮"}
+    {name: "Phones", image: PhoneImage, icon: "📱"},
+    {name: "Computers", image: ComputerImage, icon: "💻"},
+    {name: "SmartWatch", image: SmartWatchImage, icon: "⌚"},
+    {name: "Camera", image: CameraImage, icon: "📷"},
+    {name: "HeadPhones", image: HeadphonesImage, icon: "🎧"},
+    {name: "Gaming", image: GamePadImage, icon: "🎮"}
 ];
 
 const CategoryFilter = ({ onSelectCategory }) => {
@@ -21,13 +28,13 @@ const CategoryFilter = ({ onSelectCategory }) => {
     }
 
     return (
-        <div className="category_filter" >
+        <div className="category_filter">
             <h2 className="category_title">Browse By Category</h2>
 
             <div className="category_buttons">
                 {categories.map((category) => (
                     <div
-                    key={category.name}
+                        key={category.name}
                         className={`category_item ${selectedCategory === category.name ? "active" : ""}`}
                         onClick={() => handleCategoryClick(category.name)}
                     >
@@ -39,7 +46,7 @@ const CategoryFilter = ({ onSelectCategory }) => {
                             )}
                         </span>
                         {category.name}
-                </div>
+                    </div>
                 ))}
             </div>
         </div>
