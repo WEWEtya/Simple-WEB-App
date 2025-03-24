@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import '../../styles/HomePage/products.css'
 
 import PlaceHolder from '../../assets/images/HomePage/Products/Placeholder.png'
@@ -23,7 +24,9 @@ const Products = () => {
                 {products.map((product) => (
                     <div key={product.id} className="product_item">
                         <div className="product_image_wrapper">
-                            <img src={product.image} alt={product.name} className="products_image" />
+                            <Link to={`/product/${product.id}`}>
+                                <img src={product.image} alt={product.name} className="products_image" />
+                            </Link>
                         </div>
                         <h3>{product.name}</h3>
                         <p>{product.price}</p>

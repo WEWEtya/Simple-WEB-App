@@ -1,0 +1,130 @@
+.product_detail-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  padding: 20px;
+}
+
+.product_detail-left {
+  width: 60%;
+  text-align: left;
+}
+
+.product_detail-right {
+  width: 40%;
+  padding-left: 20px; 
+}
+
+.product_description h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.product_info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.product_info .price {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.product_info .stars {
+  font-size: 20px;
+  color: #c0c0c0;
+}
+
+.product_info .reviews {
+  font-size: 16px;
+  color: #666;
+}
+
+.star_rating {
+  gap: 5px;
+}
+
+.star {
+  font-size: 30px;
+  cursor: pointer;
+  color: #c0c0c0;
+}
+
+.star.filled {
+  color: rgb(0, 0, 0); 
+}
+
+.product_selection button,
+.product_selection select,
+.input_field {
+  padding: 10px;
+  border: 1px solid #ccc;
+  width: 10%;
+}
+
+.input_field {
+  margin-left: 32px;
+  width: 7%;
+  font-size: 20px;
+  background-color: white;
+  border: 2px solid #000000;
+}
+
+.product_selection select {
+  width: 70%;
+  margin-bottom: 25px;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: white;
+  border: 2px solid #000000;
+}
+
+.product_options h2 {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.product_options p {
+  font-size: 16px;
+  color: #666;
+}
+
+.buttons button {
+  padding: 20px;
+  margin-bottom: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  width: 80%;
+}
+
+.buttons .add_to_cart {
+  background-color: #000000;
+  color: white;
+  border: none;
+}
+
+.buttons .add_to_cart:hover {
+  background-color: rgb(255, 255, 255);
+  color: #000000;
+  border: 2px solid #000000;
+}
+
+.buttons .buy_now {
+  background-color: rgb(255, 255, 255);
+  color: #000000;
+  border: 2px solid #000000;
+}
+
+
+.buttons .buy_now:hover {
+  background-color: #000000;
+  color: white;
+  border: none;
+}
+
+.buttons button:hover {
+  background-color: #555;
+}

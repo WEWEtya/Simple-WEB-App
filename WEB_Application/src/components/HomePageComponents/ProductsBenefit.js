@@ -57,7 +57,7 @@ const ProductsBenefit = () => {
                             <p>Our products undergo rigorous testing to guarantee durability and reliability for our customers.</p>
                         </div>
                         
-                        <div className="featureitem">
+                        <div className="feature_item">
                             <h3>Customer Focus</h3>
                             <p>We listen to our customers and adapt our products to meet their evolving needs.</p>
                         </div>
