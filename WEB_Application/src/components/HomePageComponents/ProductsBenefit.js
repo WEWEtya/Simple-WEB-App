@@ -44,20 +44,20 @@ const ProductsBenefit = () => {
                 </div>
             </div>
 
-            <div className="bottom-text">
-                <div className="left-section">
+            <div className="bottom_text">
+                <div className="left_section">
                     <h2>Discover the Unique Benefits of Choosing Round Table Products for Your Needs</h2>
                 </div>
-                <div className="right-section">
+                <div className="right_section">
                     <p>At Round Table, we prioritize quality and innovation in every product we offer. Our carefully curated selection ensures that you receive the best value and performance.</p>
                     
                     <div className="features">
-                        <div className="feature-item">
+                        <div className="feature_item">
                             <h3>Quality Assurance</h3>
                             <p>Our products undergo rigorous testing to guarantee durability and reliability for our customers.</p>
                         </div>
                         
-                        <div className="feature-item">
+                        <div className="featureitem">
                             <h3>Customer Focus</h3>
                             <p>We listen to our customers and adapt our products to meet their evolving needs.</p>
                         </div>
