@@ -9,7 +9,6 @@ const ProductSelection = () => (
                 <option value="product2">Product 2</option>
                 <option value="product3">Product 3</option>
             </select>
-            {/* <p>Qty</p> */}
             <input className="input_field" type="number" min="1" defaultValue="1" />
     </div>
 );

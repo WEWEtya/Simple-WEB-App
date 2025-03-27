@@ -1,5 +1,7 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+
+import ScrollToTop from './components/ReusableGlobalComponents/ScrollToTop.js'
 
 import Navbar from './components/Navigation/Navbar.js';
 import Footer from './components/Footer/Footer.js';
@@ -13,6 +15,7 @@ import './styles/global.css';
 export default function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Navbar />
       <main>
         <Routes>

@@ -2,7 +2,7 @@ import React from "react";
 
 const ProductDetailsTab = () => (
     <div className="product_options">
-        <div className="product_details">
+        <div className="product_details"> 
             <h2>Details</h2>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.

@@ -1,3 +1,5 @@
+/* ProductDetailPage CSS */
+
 .product_detail-container {
   display: flex;
   justify-content: space-between;
@@ -21,6 +23,8 @@
   margin-bottom: 10px;
 }
 
+/* Product Description CSS*/
+
 .product_info {
   display: flex;
   align-items: center;
@@ -33,15 +37,12 @@
   font-weight: bold;
 }
 
-.product_info .stars {
-  font-size: 20px;
-  color: #c0c0c0;
-}
-
 .product_info .reviews {
   font-size: 16px;
   color: #666;
 }
+
+/* StarRating CSS */
 
 .star_rating {
   gap: 5px;
@@ -51,11 +52,14 @@
   font-size: 30px;
   cursor: pointer;
   color: #c0c0c0;
+  
 }
 
 .star.filled {
   color: rgb(0, 0, 0); 
 }
+
+/* ProductSelection CSS */
 
 .product_selection button,
 .product_selection select,
@@ -82,6 +86,19 @@
   border: 2px solid #000000;
 }
 
+/* ProductDetailsTab CSS */
+
+.product_details,
+.product_shipping,
+.product_returns {
+  border-top: 2px solid black;
+  padding: 20px 0;
+}
+
+.product_returns {
+  border-bottom: 2px solid black;
+}
+
 .product_options h2 {
   font-size: 20px;
   margin-top: 20px;
@@ -92,24 +109,32 @@
   color: #666;
 }
 
+/* ActionButtons CSS */
+
+.buttons p {
+  margin-left: 350px;
+  font-size: 15px;
+}
+
 .buttons button {
   padding: 20px;
   margin-bottom: 15px;
   font-size: 20px;
   cursor: pointer;
   width: 80%;
+  border: 2px solid black;
+  transition: all 0.3s ease;
 }
 
 .buttons .add_to_cart {
   background-color: #000000;
   color: white;
-  border: none;
 }
 
 .buttons .add_to_cart:hover {
   background-color: rgb(255, 255, 255);
   color: #000000;
-  border: 2px solid #000000;
+  transform: scale(1.07);
 }
 
 .buttons .buy_now {
@@ -122,9 +147,52 @@
 .buttons .buy_now:hover {
   background-color: #000000;
   color: white;
-  border: none;
+    transform: scale(1.07);
+
 }
 
 .buttons button:hover {
   background-color: #555;
+}
+
+/* ProductGallery CSS */
+
+.gallery_container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+
+.big_image {
+  width: 100%;
+  height: 500px; 
+  overflow: hidden;
+}
+
+.big_image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumbnail_row {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.thumbnail:hover,
+.thumbnail.active {
+  border: 2px solid black;
 }

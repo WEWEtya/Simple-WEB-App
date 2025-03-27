@@ -1,19 +1,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import '../../styles/HomePage/products.css'
+import '../../styles/HomePage/products.css';
 
-import PlaceHolder from '../../assets/images/HomePage/Products/Placeholder.png'
+import image1 from "../../assets/images/AboutUs/hehehe.jpg"; 
+
+import image3 from "../../assets/images/HomePage/Products/Placeholder.png"; 
+
+import image4 from "../../assets/images/HomePage/HeroBanner/airpods.png"; 
+import image6 from "../../assets/images/HomePage/HeroBanner/iphone.png"; 
 
 const products = [
-    {id: 1, name: 'Product 1', image: PlaceHolder, price: '$100' },
-    {id: 2, name: 'Product 2', image: PlaceHolder, price: '$200' },
-    {id: 3, name: 'Product 3', image: PlaceHolder, price: '$300' },
-    {id: 4, name: 'Product 4', image: PlaceHolder, price: '$400' },
-    {id: 5, name: 'Product 5', image: PlaceHolder, price: '$500' },
-    {id: 6, name: 'Product 6', image: PlaceHolder, price: '$600' },
-    {id: 7, name: 'Product 7', image: PlaceHolder, price: '$700' },
-    {id: 8, name: 'Product 8', image: PlaceHolder, price: '$800' },
-]
+    {id: 1, name: 'Product 1', images: [image4], price: '$100'},
+    {id: 2, name: 'Product 2', images: [image6], price: '$200'},
+    {id: 3, name: 'Product 3', images: [image1], price: '$300'},
+    {id: 4, name: 'Product 4', images: [image3], price: '$400'},
+    {id: 5, name: 'Product 5', images: [image3], price: '$500'},
+    {id: 6, name: 'Product 6', images: [image3], price: '$600'},
+    {id: 7, name: 'Product 7', images: [image3], price: '$700'},
+    {id: 8, name: 'Product 8', images: [image3], price: '$800'},
+];
 
 const Products = () => {
     return (
@@ -25,7 +30,7 @@ const Products = () => {
                     <div key={product.id} className="product_item">
                         <div className="product_image_wrapper">
                             <Link to={`/product/${product.id}`}>
-                                <img src={product.image} alt={product.name} className="products_image" />
+                                <img src={product.images[0]} alt={product.name} className="products_image" />
                             </Link>
                         </div>
                         <h3>{product.name}</h3>
@@ -34,7 +39,7 @@ const Products = () => {
                 ))}
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default Products;

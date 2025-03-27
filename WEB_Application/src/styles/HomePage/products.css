@@ -34,6 +34,7 @@
     position: relative;
     overflow: hidden;
     padding: 10px;
+    height: 500px;
 }
 
 .products_image {
