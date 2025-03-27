@@ -1,5 +1,7 @@
 import React from "react";
-import { FaFacebook, FaInstagram, FaYoutube, FaTwitter, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaYoutube, FaTwitter, FaRegEnvelope } from 'react-icons/fa';
+import { FiPhone } from "react-icons/fi";
+import { LuMapPin } from "react-icons/lu";
 import "../../styles/Footer/footer.css";
 
 // Reusable FooterColumn component
@@ -42,9 +44,9 @@ const Footer = () => {
   ];
 
   const contactLinks = [
-    { text: <><FaPhone className="icon" /> 576 512 786</> },
-    { text: <><FaEnvelope className="icon" /> <a href="mailto:viktorio.sokolov06@gmail.com" target="_blank" rel="noopener noreferrer">RoundTable@gmail.com</a></> },
-    { text: <><FaMapMarkerAlt className="icon" /> <a href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer">Round Table Shops</a></> }
+    { text: <><FiPhone className="icon" /> <a href="tel:+48 576 512 786">+48 576 512 786</a></> },
+    { text: <><FaRegEnvelope className="icon" /> <a href="mailto:viktorio.sokolov06@gmail.com">RoundTable@gmail.com</a></> },
+    { text: <><LuMapPin className="icon" /> <a href="https://www.google.com/maps">Round Table Shops</a></> }
   ];
 
   return (
