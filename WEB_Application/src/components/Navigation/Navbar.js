@@ -25,7 +25,7 @@ const Navbar = () => {
       <div className="navbar_right">
         {/* User Login/Register & Profile */}
         <div className="nav_user">
-          <a href="/profile" className="user_button">Sign In</a>
+          <a href="/login" className="user_button">Sign In</a>
           <a href="/register" className="user_button">Register</a>
           <a href="/account" className="user_icon" aria-label="User Account">
             <FaUser />

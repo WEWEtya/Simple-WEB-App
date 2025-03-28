@@ -1,0 +1,45 @@
+.auth_container {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 40px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.auth_container h1 {
+    margin-bottom: 30px;
+    font-size: 32px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+form input {
+    padding: 12px;
+    font-size: 18px;
+}
+
+form input:focus {
+    border-color: #000;
+    outline: none;
+}
+
+form button {
+    padding: 14px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: rgb(48, 48, 48);
+}
