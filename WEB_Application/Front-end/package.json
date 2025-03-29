@@ -5,6 +5,7 @@
   "dependencies": {
     "@types/react-router-dom": "^5.3.3",
     "app": "^0.1.0",
+    "axios": "^1.8.4",
     "cra-template": "1.2.0",
     "flickity": "^3.0.0",
     "react": "^19.0.0",
