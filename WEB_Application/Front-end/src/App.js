@@ -11,7 +11,7 @@ import ContactUs from './pages/ContactUs.js';
 import AuthPage from './pages/AuthPage.js';
 
 
-import ProductsList from './pages/ProductsListPage.js';
+import ProductsListPage from './pages/ProductsListPage.js';
 import ProductDetail from './pages/ProductDetailPage.js';
 
 
@@ -29,7 +29,7 @@ export default function App() {
           <Route path="/" element={<HomePage />} /> {/* Home page */}
           <Route path="/about" element={<AboutPage />} /> {/* About page */}
           <Route path="/contact" element={<ContactUs />}/> {/* Contact page */}
-          <Route path="/products" element={<ProductsList />} /> {/* ProductsList page */}
+          <Route path="/products" element={<ProductsListPage />} /> {/* ProductsList page */}
           <Route path="/product/:id" element={<ProductDetail />} /> {/* ProductDetail page */}
           <Route path="/login" element={<AuthPage mode="login" />} /> {/* LogIn page */}
           <Route path="/register" element={<AuthPage mode="register" />} /> {/* Register page */}
