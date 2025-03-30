@@ -1,8 +1,12 @@
-import React, {useState} from "react";
-import "../../styles/ProductDetailPage/productDetail.css"
+import React, { useState } from "react";
+import "../../styles/ProductDetailPage/productDetail.css";
 
 const ProductGallery = ({ images }) => {
-    const [selectedImage, setSelectedImage] = useState(images[0]);
+    const [selectedImage, setSelectedImage] = useState(images && images.length > 0 ? images[0].imageUrl : "");  
+
+    if (!images || images.length === 0) {
+        return <div>No images available.</div>; 
+    }
 
     return (
         <div className="gallery_container">
@@ -13,11 +17,11 @@ const ProductGallery = ({ images }) => {
             <div className="thumbnail_row">
                 {images.map((img, index) => (
                     <img 
-                        key={index}
-                        src={img}
+                        key={img.id}
+                        src={img.imageUrl}
                         alt={`Thumbnail ${index + 1}`}
-                        className={`thumbnail ${selectedImage === img ? "active" : "" }`}
-                        onMouseEnter={() => setSelectedImage(img)}
+                        className={`thumbnail ${selectedImage === img.imageUrl ? "active" : ""}`}
+                        onMouseEnter={() => setSelectedImage(img.imageUrl)}
                     />
                 ))}
             </div>

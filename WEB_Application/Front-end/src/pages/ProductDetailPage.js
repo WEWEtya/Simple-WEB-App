@@ -13,7 +13,7 @@ import ProductGallery from "../components/ProductsDetail/ProductGallery.js";
 function ProductDetailPage() {
     const { id } = useParams();
     const [product, setProduct] = useState(null);
-    const [loading, setLoading] = useState(null);
+    const [loading, setLoading] = useState(true); 
     const [error, setError] = useState(null);
 
     useEffect(() => {
@@ -23,7 +23,7 @@ function ProductDetailPage() {
                 setLoading(false);
             })
             .catch(error => {
-                console.error("Error", error);
+                console.error("Error fetching product data:", error);
                 setError("Product not found");
                 setLoading(false);
             });
@@ -31,23 +31,22 @@ function ProductDetailPage() {
 
     if (loading) return <div>Loading...</div>;
     if (error) return <div>{error}</div>;
-    if(!product) return <div>No product data available.</div>;
+    if (!product) return <div>No product data available.</div>;
 
-        return (
-            <div className="product_detail-container">
-                <div className="product_detail-left">
-                    <ProductDescription product={product} />
-                    <ProductSelection />
-                    <ActionButtons />
-                    <ProductDetailsTab />
-                </div>
-        
-                <div className="product_detail-right">
-                    <ProductGallery images={[product.mainImageUrl]}/>
-                </div>
+    return (
+        <div className="product_detail-container">
+            <div className="product_detail-left">
+                <ProductDescription product={product} />
+                <ProductSelection />
+                <ActionButtons />
+                <ProductDetailsTab />
             </div>
-        );
 
+            <div className="product_detail-right">
+                <ProductGallery images={product.images} />
+            </div>
+        </div>
+    );
 }
 
 export default ProductDetailPage;
