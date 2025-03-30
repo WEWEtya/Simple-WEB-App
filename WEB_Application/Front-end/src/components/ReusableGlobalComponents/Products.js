@@ -22,18 +22,22 @@ function ProductsList(){
             <h2>Explore our diverse range of quality products</h2>
             <div className="product_grid">
                 {products.map((product) => (
-                    <div key={product.id} className="product_item">
-                        <div className="product_image_wrapper">
-                            <Link to={`/product/${product.id}`}>
+                    <Link 
+                        to={`/product/${product.id}`}
+                        key={product.id}
+                        className="product_item_link"
+                    >
+                        <div className="product_item">
+                            <div className="product_image_wrapper">
                                 <img 
                                     src={product.images[0]?.imageUrl} 
                                     alt={product.name} 
                                     className="products_image" />
-                            </Link>
+                            </div>
+                            <h3>{product.name}</h3>
+                            <p>{product.price}$</p>
                         </div>
-                        <h3>{product.name}</h3>
-                        <p>{product.price}</p>
-                    </div>
+                    </Link>
                 ))}
             </div>
         </div>
