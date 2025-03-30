@@ -1,19 +1,23 @@
+body {
+    background-color: white;
+}
+
 .app_container {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ensures footer stays at the bottom */
-  }
+    min-height: 100vh;
+}
   
-  main {
-    flex: 1; /* Allows content to grow and push footer down */
+main {
+    flex: 1;
     padding: 20px;
     text-align: center;
-  }
+}
 
-  .button {
+.button {
     font-size: 20px;
     padding: 20px;
-    margin-right: 10px; /* Space between buttons */
+    margin-right: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
     display: inline-block;

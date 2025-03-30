@@ -26,7 +26,7 @@ function ProductsList(){
                         <div className="product_image_wrapper">
                             <Link to={`/product/${product.id}`}>
                                 <img 
-                                    src={product.mainImageUrl} 
+                                    src={product.images[0]?.imageUrl} 
                                     alt={product.name} 
                                     className="products_image" />
                             </Link>
