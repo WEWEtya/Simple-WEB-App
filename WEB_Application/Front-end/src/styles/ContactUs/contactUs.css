@@ -1,59 +1,64 @@
 .contact_us_container {
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-  }
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
   
-  .contact_us_header h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
-  }
+.contact_us_header h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
   
-  .contact_us_header p {
-    font-size: 18px;
-    margin-bottom: 40px;
-  }
+.contact_us_header p {
+  font-size: 18px;
+  margin-bottom: 40px;
+}
   
-  .contact_us_info {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
+.contact_us_info {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
   
-  .contact_us_item {
-    margin: 20px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    width: 345px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
+.contact_us_item {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 345px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
   
-  .contact_icon {
-    font-size: 40px;
-    color: #000;
-    margin-bottom: 15px;
-  }
-  
-  .contact_us_item h2 {
-    font-size: 26px;
-    margin: 10px 0;
-  }
-  
-  .contact_us_item p {
-    margin-bottom: 15px;
-  }
-  
-  .contact_us_item a {
-    font-size: 16px;
-    color: #000000;
-    text-decoration: underline;
-    transition: color 0.3s ease;
-  }
-  
-  .contact_us_item a:hover {
-    color: #005bb5;
-  }
+.contact_icon {
+  font-size: 40px;
+  color: #000;
+  margin-bottom: 15px;
+}
+
+.contact_us_item h2 {
+  font-size: 26px;
+  margin: 10px 0;
+}
+
+.contact_us_item p {
+  margin-bottom: 15px;
+}
+
+.contact_us_item a {
+  font-size: 16px;
+  color: #000000;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.contact_us_item a:hover {
+  color: #005bb5;
+}
+
+.contact_us_item:hover {
+  transform: scale(1.05);
+}
   
