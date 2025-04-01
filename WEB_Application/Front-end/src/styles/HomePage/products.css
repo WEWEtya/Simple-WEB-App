@@ -3,16 +3,6 @@
     text-align: center;
 }
 
-.products_container h1 {
-    font-size: 75px;
-    margin-bottom: 20px;
-}
-
-.products_container h2 {
-    font-size: 20px;
-    margin-bottom: 70px;
-}
-
 .product_grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);

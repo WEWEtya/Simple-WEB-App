@@ -2,26 +2,37 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from 'axios';
 import '../../styles/HomePage/products.css';
+import CategoryFilter from "../HomePageComponents/CategoryFilter.js";  // Import CategoryFilter
 
-function ProductsList(){
+function ProductsList({ selectedCategory }) {
     const [products, setProducts] = useState([]);
+    const [filteredProducts, setFilteredProducts] = useState([]);
 
     useEffect(() => {
-            axios.get('http://localhost:8080/api/products')
-                .then(response => {
-                    setProducts(response.data);
+        axios.get('http://localhost:8080/api/products')
+            .then(response => {
+                setProducts(response.data);
             })
-                .catch(error => {
-                    console.error('There was an error fetching the products!', error);
-            });
+            .catch(error => console.error('Error fetching products!', error));
     }, []);
+
+    // Function to filter products based on selected category
+    useEffect(() => {
+        if (!selectedCategory) {
+            setFilteredProducts(products); // Show all products when no filter is selected
+        } else {
+            setFilteredProducts(products.filter(product => 
+                product.type.toLowerCase() === selectedCategory.toLowerCase()
+            ));
+        }
+    }, [selectedCategory, products]);
 
     return (
         <div className="products_container">
-            <h1>Products</h1>
-            <h2>Explore our diverse range of quality products</h2>
+
             <div className="product_grid">
-                {products.map((product) => (
+                {filteredProducts.length > 0 ? (
+                    filteredProducts.map((product) => (
                     <Link 
                         to={`/product/${product.id}`}
                         key={product.id}
@@ -38,11 +49,13 @@ function ProductsList(){
                             <p>{product.price}$</p>
                         </div>
                     </Link>
-                ))}
+                    ))
+                ) : (
+                        <p>No products available for this category.</p>
+                    )}                
             </div>
         </div>
     );
-};
-    
+}
 
 export default ProductsList;

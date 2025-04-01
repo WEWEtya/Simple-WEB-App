@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -39,8 +40,14 @@ public class ProductController {
     }
     
     @GetMapping
-    public List<Product> getAll(){
-        List<Product> products = productRepository.findAll();
+    public List<Product> getAll(@RequestParam(required = false) String type){
+        List<Product> products;
+
+        if (type != null && !type.isEmpty()) {
+            products = productRepository.findByType(type);
+        } else {
+            products = productRepository.findAll();
+        }
 
         for (Product product : products) {
             List<ProductImage> images = productImageRepository.findByProductId(product.getId());
@@ -48,4 +55,5 @@ public class ProductController {
         }
         return products;
     }
+
 }
