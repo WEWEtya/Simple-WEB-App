@@ -22,11 +22,12 @@ public class Product {
     @JsonManagedReference
     private List<ProductImage> images;
 
+    // Getters and setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
     public String getName() { return name; }
-    public void setName (String name) { this.name = name; }
+    public void setName(String name) { this.name = name; }
 
     public String getType() { return type; }
     public void setType(String type) { this.type = type; }
@@ -37,6 +38,6 @@ public class Product {
     public BigDecimal getPrice() { return price; }
     public void setPrice(BigDecimal price) { this.price = price; }
 
-    public List<ProductImage> getImages(){ return images; }
+    public List<ProductImage> getImages() { return images; }
     public void setImages(List<ProductImage> images) { this.images = images; }
 }

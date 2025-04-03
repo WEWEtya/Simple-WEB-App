@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
-
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/products")
@@ -40,20 +40,31 @@ public class ProductController {
     }
     
     @GetMapping
-    public List<Product> getAll(@RequestParam(required = false) String type){
+    public List<Product> getAll(@RequestParam(required = false) String type,
+                                @RequestParam(required = false) String search) {
         List<Product> products;
 
+        // Apply category (type) filter if provided
         if (type != null && !type.isEmpty()) {
-            products = productRepository.findByType(type);
+            products = productRepository.findByType(type);  // Find by category
         } else {
-            products = productRepository.findAll();
+            products = productRepository.findAll();  // Get all products if no category is specified
         }
 
+        // Apply search filter if provided
+        if (search != null && !search.isEmpty()) {
+            products = products.stream()
+                    .filter(product -> product.getName().toLowerCase().contains(search.toLowerCase()) ||
+                            product.getDescription().toLowerCase().contains(search.toLowerCase()))
+                    .collect(Collectors.toList());
+        }
+
+        // Add images to the products
         for (Product product : products) {
             List<ProductImage> images = productImageRepository.findByProductId(product.getId());
             product.setImages(images);
         }
+
         return products;
     }
-
 }

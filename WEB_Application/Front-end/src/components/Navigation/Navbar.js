@@ -2,8 +2,9 @@ import React from "react";
 import { FaShoppingCart, FaUser } from "react-icons/fa";
 import "../../styles/NavigationBar/navbar.css";
 import { Link } from 'react-router-dom';
+import SearchFilter from "../FilterComponents/SearchFilter";
 
-const Navbar = () => {
+const Navbar = ({ onSearch }) => {
   return (
     <nav className="navbar">
       {/* Left: Logo */}
@@ -11,17 +12,25 @@ const Navbar = () => {
         <a href="/" className="logo">Round Table</a>
       </div>
 
-      {/* Center: Navigation Links */}
+      {/* Center: Navigation Links and Search Bar */}
       <div className="navbar_center">
-        <ul className="nav_links">
+        {/* Left part of navigation */}
+        <ul className="nav_links_left">
           <li><a href="/">Shop Now</a></li>
           <li><a href="/products">Products</a></li>
+        </ul>
+
+        {/* Search Filter (between Products and About Us) */}
+        <SearchFilter onSearch={onSearch} />
+
+        {/* Right part of navigation */}
+        <ul className="nav_links_right">
           <li><a href="/about">About Us</a></li>
           <li><a href="/contact">Contact Us</a></li>
         </ul>
       </div>
 
-      {/* Right: User & Cart Section */}
+      {/* Right: User Section */}
       <div className="navbar_right">
         {/* User Login/Register & Profile */}
         <div className="nav_user">
@@ -37,7 +46,6 @@ const Navbar = () => {
               <FaShoppingCart />
               <span className="cart_count">0</span>
             </a>
-
         </div>
       </div>
     </nav>

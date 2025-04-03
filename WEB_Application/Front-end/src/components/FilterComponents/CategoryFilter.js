@@ -3,12 +3,11 @@ import '../../styles/HomePage/categoryFilter.css';
 
 import PhoneImage from "../../assets/images/HomePage/CategoryFilter/Category-CellPhone.png";
 import ComputerImage from "../../assets/images/HomePage/CategoryFilter/Category-Computer.png";
-import SmartWatchImage from "../../assets/images/HomePage/CategoryFilter/Category-SmartWatch.png"
-import CameraImage from "../../assets/images/HomePage/CategoryFilter/Category-Camera.png"
-import HeadphonesImage from "../../assets/images/HomePage/CategoryFilter/Category-Headphone.png"
-import GamePadImage from "../../assets/images/HomePage/CategoryFilter/Category-Gamepad.png"
-
-
+import SmartWatchImage from "../../assets/images/HomePage/CategoryFilter/Category-SmartWatch.png";
+import CameraImage from "../../assets/images/HomePage/CategoryFilter/Category-Camera.png";
+import HeadphonesImage from "../../assets/images/HomePage/CategoryFilter/Category-Headphone.png";
+import GamePadImage from "../../assets/images/HomePage/CategoryFilter/Category-Gamepad.png";
+import { useNavigate } from "react-router-dom";
 
 const categories = [
     { name: "Phone", image: PhoneImage, icon: "📱" },
@@ -21,14 +20,15 @@ const categories = [
 
 const CategoryFilter = ({ onSelectCategory }) => {
     const [selectedCategory, setSelectedCategory] = useState("");
+    const navigate = useNavigate();
 
     const handleCategoryClick = (category) => {
         if (selectedCategory === category) {
             setSelectedCategory(""); // Reset filter
-            onSelectCategory(""); // Show all products
+            navigate("/products") // Show all products
         } else {
             setSelectedCategory(category);
-            onSelectCategory(category);
+            navigate(`/products?category=${category.toLowerCase()}`)
         }
     };
 

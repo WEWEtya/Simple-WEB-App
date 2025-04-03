@@ -1,85 +1,96 @@
 /* General Navbar Styling */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    color: rgb(0, 0, 0);
-    border-bottom: 1px solid #000;
-  }
-  
-  /* Left: Logo */
-  .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-  }
-  
-  /* Center: Navigation Links */
-  .nav_links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-  
-  .nav_links li a {
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-    font-size: 18px;
-    transition: 0.3s;
-  }
-  
-  .nav_links li a:hover {
-    color: #000000;
-  }
-  
-  /* Right: User Section */
-  .navbar_right, .nav_user{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .user_button {
-    background-color: #000000;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    font-size: 16px;
-    text-decoration: none;
-    transition: 0.3s;
-  }
-  
-  .user_button:hover {
-    background-color: #7a7878;
-  }
-  
-  /* User Icon */
-  .user_icon {
-    font-size: 30px;
-    color: rgb(0, 0, 0);
-    margin-left: 10px;
-  }
-  
-  /* Shopping Cart */
-  .cart {
-    position: relative;
-  }
-  
-  .cart_icon {
-    font-size: 30px;
-    color: #000;
-    text-decoration: none;
-  }
-  
-  .cart_count {
-    position: absolute;
-    top: -5px;
-    right: -10px;
-    background: red;
-    color: white;
-    font-size: 12px;
-    padding: 3px 7px;
-    border-radius: 50%;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  color: rgb(0, 0, 0);
+  border-bottom: 1px solid #000;
+}
+
+/* Left: Logo */
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+/* Center: Navigation Links & Search Bar */
+.navbar_center {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.nav_links_left, .nav_links_right {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav_links_left li a,
+.nav_links_right li a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.nav_links_left li a:hover,
+.nav_links_right li a:hover {
+  color: #000000;
+}
+
+/* Right: User Section */
+.navbar_right, .nav_user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user_button {
+  background-color: #000000;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  font-size: 16px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.user_button:hover {
+  background-color: #7a7878;
+}
+
+/* User Icon */
+.user_icon {
+  font-size: 30px;
+  color: rgb(0, 0, 0);
+  margin-left: 10px;
+}
+
+/* Shopping Cart */
+.cart {
+  position: relative;
+}
+
+.cart_icon {
+  font-size: 30px;
+  color: #000;
+  text-decoration: none;
+}
+
+.cart_count {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background: red;
+  color: white;
+  font-size: 12px;
+  padding: 3px 7px;
+  border-radius: 50%;
+}
