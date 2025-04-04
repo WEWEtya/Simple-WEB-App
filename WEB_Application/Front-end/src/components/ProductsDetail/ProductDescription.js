@@ -1,12 +1,14 @@
-
 import React from "react";
-import StarRating from "./StarRating"; 
+import StarRating from "./StarRating";
 
 const ProductDescription = ({ product }) => (
     <div className="product_description">
         <h1>{product.name}</h1>
         <div className="product_info">
-            <span className="price">{product.price}$ |</span> 
+            {/* Conditionally render price */}
+            <span className="price">
+                {product.price ? `${product.price}$` : "Price not available"} |
+            </span>
             <span className="stars">
                 <StarRating initialRating={product.initialRating} />
             </span>

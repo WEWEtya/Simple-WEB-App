@@ -39,7 +39,7 @@ function ProductDetailPage() {
                 <ProductDescription product={product} />
                 <ProductSelection />
                 <ActionButtons />
-                <ProductDetailsTab />
+                <ProductDetailsTab attributes={product.attributes}/>
             </div>
 
             <div className="product_detail-right">

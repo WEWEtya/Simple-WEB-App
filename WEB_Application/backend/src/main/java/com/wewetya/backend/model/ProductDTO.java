@@ -1,5 +1,6 @@
 package com.wewetya.backend.model;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public class ProductDTO {
@@ -9,14 +10,16 @@ public class ProductDTO {
     private String description;
     private List<ProductImage> images;       
     private List<ProductAttributeDTO> attributes;  
+    private BigDecimal price;
 
     // Constructor with all necessary fields
-    public ProductDTO(Long id, String name, String description, List<ProductImage> images, List<ProductAttributeDTO> attributes) {
+    public ProductDTO(Long id, String name, String description, List<ProductImage> images, List<ProductAttributeDTO> attributes, BigDecimal price) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.images = images;
         this.attributes = attributes;
+        this.price = price;
     }
 
     // Getters and setters
@@ -28,6 +31,9 @@ public class ProductDTO {
 
     public String getDescription() { return description; }
     public void setDescription(String description) { this.description = description; }
+
+    public BigDecimal getPrice() { return price; }
+    public void setPrice(BigDecimal price) { this.price = price; }
 
     public List<ProductImage> getImages() { return images; }
     public void setImages(List<ProductImage> images) { this.images = images; }

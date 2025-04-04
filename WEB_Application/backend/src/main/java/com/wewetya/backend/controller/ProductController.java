@@ -66,7 +66,14 @@ public class ProductController {
                     .collect(Collectors.toList());
 
                 // Return the product along with attributes (no need to modify Product entity)
-                ProductDTO productDTO = new ProductDTO(product.getId(), product.getName(), product.getDescription(), images, attributesWithValues);
+                ProductDTO productDTO = new ProductDTO(
+                    product.getId(), 
+                    product.getName(), 
+                    product.getDescription(), 
+                    images, 
+                    attributesWithValues,
+                    product.getPrice()
+                );
                 return ResponseEntity.ok(productDTO);
             })
             .orElseGet(() -> ResponseEntity.notFound().build());
