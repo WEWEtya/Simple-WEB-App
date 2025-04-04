@@ -22,6 +22,9 @@ public class Product {
     @JsonManagedReference
     private List<ProductImage> images;
 
+    @OneToMany(mappedBy = "product")
+    private List<ProductAttributeValue> attributeValues;
+
     // Getters and setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
@@ -40,4 +43,7 @@ public class Product {
 
     public List<ProductImage> getImages() { return images; }
     public void setImages(List<ProductImage> images) { this.images = images; }
+
+    public List<ProductAttributeValue> getAttributeValues() { return attributeValues; }
+    public void setAttributeValues(List<ProductAttributeValue> attributeValues) { this.attributeValues = attributeValues; }
 }
