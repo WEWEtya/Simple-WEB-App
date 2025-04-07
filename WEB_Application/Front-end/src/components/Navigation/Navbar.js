@@ -1,12 +1,11 @@
-import React, { useContext } from "react";
+import React from "react";
 import { FaShoppingCart, FaUser } from "react-icons/fa";
 import "../../styles/NavigationBar/navbar.css";
-import { Link } from 'react-router-dom';
 import SearchFilter from "../FilterComponents/SearchFilter";
-import { CartContext } from "./Cart";
+import { useCart } from "./Cart";
 
 const Navbar = ({ onSearch }) => {
-  const { cartItems } = useContext(CartContext);
+  const { cartCount } = useCart();
 
   return (
     <nav className="navbar">
@@ -47,7 +46,7 @@ const Navbar = ({ onSearch }) => {
         <div className="cart">
             <a href="/cart" className="cart_icon" aria-label="Shopping Cart">
               <FaShoppingCart />
-              <span className="cart_count">{cartItems.length}</span>
+              <span className="cart_count">{cartCount}</span>
             </a>
         </div>
       </div>
