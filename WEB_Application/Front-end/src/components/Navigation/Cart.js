@@ -1,14 +1,25 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 
 const CartContext = createContext();
 
 export const useCart = () => useContext(CartContext);
 
 export const CartProvider = ({ children }) => {
-    const [cartItems, setCartItems] = useState(() => {
+    const [cartItems, setCartItems] = useState([]);
+
+    useEffect(() => {
+
+        const hasInitialized = sessionStorage.getItem("cartInitialized");
+
+        if (!hasInitialized) {
+            localStorage.removeItem("cartItems");
+            sessionStorage.setItem("cartInitialized", "true");
+        }
+
         const stored = localStorage.getItem("cartItems");
-        return stored ? JSON.parse(stored) : [];
-    });
+        setCartItems(stored ? JSON.parse(stored) : []);
+
+    }, []);
 
     const addToCart = (product) => {
         const updatedItems = [...cartItems, product];
