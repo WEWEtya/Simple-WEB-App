@@ -1,0 +1,123 @@
+.cart_page {
+    padding: 32px;
+    display: flex;
+    gap: 16px;
+    margin: 0 auto;
+    justify-content: space-between;
+    max-width: 1100px; 
+    width: 100%;
+}
+
+.cart_left {
+    flex: 1;
+    min-width: 500px;  
+}
+
+.cart_right {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    min-width: 400px;
+    width: 35%;  
+}
+
+.cart_page h1 {
+    font-size: 32px;
+    margin-bottom: 24px;
+}
+
+.cart_items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cart_item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    padding: 12px;
+    max-width: 100%; 
+}
+
+.cart_item-img {
+    width: 100px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 16px;
+}
+
+.cart_item-info {
+    flex: 1;
+}
+
+.cart_item-info h2 {
+    font-size: 22px;
+    margin: 0 0 8px;
+}
+
+.cart_item-info span {
+    font-size: 22px;
+}
+
+.cart_summary {
+    margin-top: 32px;
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.cart_summary h2 {
+    font-size: 48px;
+}
+
+.buy_button {
+    background-color: #000000;
+    color: white;
+    padding: 12px 24px;
+    border: 1px solid black;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    width: 100%;
+    margin-top: 16px;
+}
+
+.buy_button:hover {
+    background-color: #ffffff;
+    color: black;
+    border: 1px solid rgb(0, 0, 0);
+}
+
+.remove_button {
+    color: white;
+    font-size: 12px;
+    border: 1px solid black;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-left: 16px;
+    border-radius: 8px;
+}
+
+.remove_button:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
+.cart_item select {
+    padding: 8px;
+    font-size: 16px;
+    margin-top: 8px;
+    min-width: 60px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.cart_item-info .price {
+    display: flex;
+    justify-content: flex-end;
+    min-width: 100px;
+}

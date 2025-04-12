@@ -6,6 +6,7 @@ import ScrollToTop from './components/ReusableGlobalComponents/ScrollToTop.js'
 
 import Navbar from './components/Navigation/Navbar.js';
 import Footer from './components/Footer/Footer.js';
+import Cart from './pages/CartPage.js'
 
 import AboutPage from './pages/AboutPage';
 import HomePage from './pages/HomePage';
@@ -45,6 +46,7 @@ export default function App() {
             <Route path="/product/:id" element={<ProductDetail />} /> {/* ProductDetail page */}
             <Route path="/login" element={<AuthPage mode="login" />} /> {/* LogIn page */}
             <Route path="/register" element={<AuthPage mode="register" />} /> {/* Register page */}
+            <Route path="/cart" element={<Cart />} />
           </Routes>
         </main>
         <Footer />
