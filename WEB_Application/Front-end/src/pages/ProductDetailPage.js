@@ -38,7 +38,7 @@ function ProductDetailPage() {
             <div className="product_detail-left">
                 <ProductDescription product={product} />
                 <ProductSelection />
-                <ActionButtons />
+                <ActionButtons product={product}/>
                 <ProductDetailsTab attributes={product.attributes}/>
             </div>
 

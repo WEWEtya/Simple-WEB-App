@@ -91,12 +91,6 @@
 
 .side_image.right {
     order: 1;
-
-}
-
-.swiper-pagination {
-    transform: translateZ(-18.5%);
-    transform: translateX(-18.5%);
 }
 
 .swiper-pagination-bullet {

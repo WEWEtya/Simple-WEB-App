@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import { CartProvider } from './components/Navigation/Cart.js';
 
 import ScrollToTop from './components/ReusableGlobalComponents/ScrollToTop.js'
 
 import Navbar from './components/Navigation/Navbar.js';
 import Footer from './components/Footer/Footer.js';
+import Cart from './pages/CartPage.js'
 
 import AboutPage from './pages/AboutPage';
 import HomePage from './pages/HomePage';
@@ -25,27 +27,30 @@ export default function App() {
 
   return (
     <Router>
-      <ScrollToTop />
-      <Navbar onSearch={setSearchQuery}/>
-      <main>
-        <Routes>
-          {/* Define the correct route paths */}
-          <Route path="/" element={<HomePage />} /> {/* Home page */}
-          <Route path="/about" element={<AboutPage />} /> {/* About page */}
-          <Route path="/contact" element={<ContactUs />}/> {/* Contact page */}
-          
-          <Route path="/products" element={<ProductsListPage 
-                                              searchQuery={searchQuery}
-                                              selectedCategory={selectedCategory}
-                                              onSelectCategory={setSelectedCategory}
-                                          />} /> {/* ProductsList page */}
+      <CartProvider>
+        <ScrollToTop />
+        <Navbar onSearch={setSearchQuery}/>
+        <main>
+          <Routes>
+            {/* Define the correct route paths */}
+            <Route path="/" element={<HomePage />} /> {/* Home page */}
+            <Route path="/about" element={<AboutPage />} /> {/* About page */}
+            <Route path="/contact" element={<ContactUs />}/> {/* Contact page */}
+            
+            <Route path="/products" element={<ProductsListPage 
+                                                searchQuery={searchQuery}
+                                                selectedCategory={selectedCategory}
+                                                onSelectCategory={setSelectedCategory}
+                                            />} /> {/* ProductsList page */}
 
-          <Route path="/product/:id" element={<ProductDetail />} /> {/* ProductDetail page */}
-          <Route path="/login" element={<AuthPage mode="login" />} /> {/* LogIn page */}
-          <Route path="/register" element={<AuthPage mode="register" />} /> {/* Register page */}
-        </Routes>
-      </main>
-      <Footer />
+            <Route path="/product/:id" element={<ProductDetail />} /> {/* ProductDetail page */}
+            <Route path="/login" element={<AuthPage mode="login" />} /> {/* LogIn page */}
+            <Route path="/register" element={<AuthPage mode="register" />} /> {/* Register page */}
+            <Route path="/cart" element={<Cart />} />
+          </Routes>
+        </main>
+        <Footer />
+      </CartProvider>
     </Router>
   );
 }
