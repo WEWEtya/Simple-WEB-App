@@ -185,16 +185,16 @@
 }
 
 .thumbnail {
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
   object-fit: cover;
   border: 1px solid #ddd;
   cursor: pointer;
-  transition: all 0.3s ease;
   flex-shrink: 0;
+  padding: 6px; 
 }
 
-.thumbnail:hover,
+
 .thumbnail.active {
   border: 2px solid black;
 }

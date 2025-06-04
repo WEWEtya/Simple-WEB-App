@@ -48,7 +48,10 @@ const ProductsList = ({ selectedCategory }) => {
                         <Link to={`/product/${product.id}`} key={product.id} className="product_item_link">
                             <div className="product_item">
                                 <div className="product_image_wrapper">
-                                    <img src={product.images[0]?.imageUrl} alt={product.name} className="products_image" />
+                                    <img 
+                                    src={product.images[0]?.imageUrl} 
+                                    alt={product.name} 
+                                    className="products_image" />
                                 </div>
                                 <h3>{product.name}</h3>
                                 <p>{product.price}$</p>
