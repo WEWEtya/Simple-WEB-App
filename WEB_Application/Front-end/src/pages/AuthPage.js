@@ -38,32 +38,64 @@ const AuthPage = ({ mode, setIsLoggedIn }) => {
 
             const response = await axios.post(endpoint, payload);
 
-            if( isLogin && response.data.token) {
-                localStorage.setItem("authToken", response.data.token);
-                localStorage.setItem("user", MediaKeySession.stringify({
-                    email: response.data.email,
-                    username: response.data.username
-                }));
-                setIsLoggedIn(true);
-                alert("Login successful");
-            } else if (!isLogin) {
-                alert("Registration successful");
+            if (isLogin) {
+                if (response.data.token) {
+                    localStorage.setItem("authToken", response.data.token);
+                    localStorage.setItem("user", JSON.stringify({
+                        email: response.data.email,
+                        username: response.data.username
+                    }));
+                    setIsLoggedIn(true);
+                    alert("Login successful");
+                } else {
+                    alert("Login failed: No token received.");
+                }
+            } else {
+                // Registration
+                alert(response.data || "Registration successful");
             }
         } catch (error) {
-            alert(error.response?.data || "Something went wrong");
+            console.log(error);
+            // Show a more helpful error message
+            if (error.response && error.response.data) {
+                // If the backend sent a string, show it. If it's an object, stringify it.
+                alert(typeof error.response.data === "string"
+                    ? error.response.data
+                    : JSON.stringify(error.response.data));
+            } else {
+                alert("Something went wrong");
+            }
         }
     };
 
     return (
         <div className="auth_container">
             <h1>{isLogin ? "Sign In" : "Register"}</h1>
-            <form>
+            <form onSubmit={handleSubmit}>
                 {!isLogin && (
-                    <input type="text" placeholder="Username" />
+                    <input
+                        type="text"
+                        name="username"
+                        placeholder="Username"
+                        value={formData.username}
+                        onChange={handleChange}
+                    />
                 )}
 
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" />
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    value={formData.email}
+                    onChange={handleChange}
+                />
+                <input
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                    value={formData.password}
+                    onChange={handleChange}
+                />
                 <button type="submit">
                     {isLogin ? "Sign In" : "Register"}
                 </button>
