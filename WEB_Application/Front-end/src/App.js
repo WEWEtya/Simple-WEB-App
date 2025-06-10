@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import { CartProvider } from './components/Navigation/Cart.js';
 
@@ -6,6 +6,7 @@ import ScrollToTop from './components/ReusableGlobalComponents/ScrollToTop.js'
 
 import Navbar from './components/Navigation/Navbar.js';
 import Footer from './components/Footer/Footer.js';
+import Account from './pages/ProfilePage.js';
 import Cart from './pages/CartPage.js'
 
 import AboutPage from './pages/AboutPage';
@@ -24,12 +25,24 @@ import './styles/global.css';
 export default function App() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem("authToken");
+    setIsLoggedIn(!!token);
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("authToken");
+    localStorage.removeItem("user");
+    setIsLoggedIn(false);
+  };
 
   return (
     <Router>
       <CartProvider>
         <ScrollToTop />
-        <Navbar onSearch={setSearchQuery}/>
+        <Navbar onSearch={setSearchQuery} isLoggedIn={isLoggedIn} onLogout={handleLogout} />
         <main>
           <Routes>
             {/* Define the correct route paths */}
@@ -44,8 +57,9 @@ export default function App() {
                                             />} /> {/* ProductsList page */}
 
             <Route path="/product/:id" element={<ProductDetail />} /> {/* ProductDetail page */}
-            <Route path="/login" element={<AuthPage mode="login" />} /> {/* LogIn page */}
-            <Route path="/register" element={<AuthPage mode="register" />} /> {/* Register page */}
+            <Route path="/login" element={<AuthPage mode="login" setIsLoggedIn={setIsLoggedIn} />} /> {/* LogIn page */}
+            <Route path="/register" element={<AuthPage mode="register" setIsLoggedIn={setIsLoggedIn} />} /> {/* Register page */}
+            <Route path="/account" element={<Account />} /> {/* Profile page */}
             <Route path="/cart" element={<Cart />} />
           </Routes>
         </main>

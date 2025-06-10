@@ -1,7 +1,9 @@
+/* Container for the category filter section */
 .category_filter {
     padding: 20px;
 }
 
+/* Title styling */
 .category_title {
     font-size: 48px;
     margin: 50px 0px 40px 150px;
@@ -9,6 +11,7 @@
     text-align: left;
 }
 
+/* Category buttons container */
 .category_buttons {
     display: flex;
     justify-content: center;
@@ -17,6 +20,7 @@
     flex-wrap: wrap;
 }
 
+/* Individual category item */
 .category_item {
     display: flex;
     align-items: center;
@@ -24,6 +28,7 @@
     flex-direction: column;
     width: 200px;
     height: 175px;
+    background-color: #fff;
     border: 2px solid #ddd;
     border-radius: 5px;
     cursor: pointer;
@@ -31,41 +36,48 @@
     font-size: 16px;
 }
 
-.category_icon img {
-    width: 50px !important;
-    height: 50px !important;
-    margin-bottom: 16px;
+/* Icon container */
+.category_icon {
+    font-size: 24px;
+    margin-bottom: 8px;
 }
 
+/* Icon image styling */
+.category_icon img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 8px;
+    transition: filter 0.3s ease;
+}
 
+/* Active category item styles */
 .category_item.active {
     background-color: black;
     color: white;
     border-color: black;
 }
 
-/* Apply filter to image when category item is active */
+/* Icon color when active */
 .category_item.active .category_icon img {
     filter: invert(1) grayscale(100%) brightness(100%) !important;
-    transition: filter 0.3s ease;
 }
 
+/* Active + hover: revert icon color, change background/text */
 .category_item.active:hover {
-    color: white;
+    color: #000;
+    background-color: #fff;
+    border: 2px solid #ddd;
+}
+.category_item.active:hover .category_icon img {
+    filter: invert(0) grayscale(100%) brightness(100%) !important;
 }
 
+/* Hover effect: only scale and icon color, no background/text change */
 .category_item:hover {
     transform: scale(1.05);
-    background-color: #f5f5f5;
+    color: white;
+    background-color: black;
 }
-
-.category_icon {
-    font-size: 24px;
-    margin-bottom: 8px;
-}
-
-.category_icon img {
-    width: 36px;
-    height: 36px;
-    margin-bottom: 8px;
+.category_item:hover .category_icon img {
+    filter: invert(1) grayscale(100%) brightness(100%) !important;
 }

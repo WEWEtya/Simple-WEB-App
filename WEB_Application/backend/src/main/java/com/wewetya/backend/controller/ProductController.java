@@ -1,29 +1,27 @@
 package com.wewetya.backend.controller;
 
 // Models Imports
-import com.wewetya.backend.model.Product;
-import com.wewetya.backend.model.ProductAttribute;
-import com.wewetya.backend.model.ProductAttributeValue;
-import com.wewetya.backend.model.ProductImage;
-import com.wewetya.backend.model.ProductAttributeDTO;
-import com.wewetya.backend.model.ProductDTO;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.stream.Collectors;
 
-// Repository Imports
-import com.wewetya.backend.repository.ProductRepository;
-import com.wewetya.backend.repository.ProductAttributeValueRepository;
-import com.wewetya.backend.repository.ProductImageRepository;
-
-// Librarys Imports
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-import java.util.stream.Collectors;
+import com.wewetya.backend.model.Product;
+import com.wewetya.backend.model.ProductAttributeDTO;
+import com.wewetya.backend.model.ProductAttributeValue;
+import com.wewetya.backend.model.ProductDTO;
+import com.wewetya.backend.model.ProductImage;
+import com.wewetya.backend.repository.ProductAttributeValueRepository;
+import com.wewetya.backend.repository.ProductImageRepository;
+import com.wewetya.backend.repository.ProductRepository;
 
 @RestController
 @RequestMapping("/api/products")
@@ -47,6 +45,15 @@ public class ProductController {
             .map(product -> {
                 // Fetch product images
                 List<ProductImage> images = productImageRepository.findByProductId(id);
+
+                // Always set full URL
+                images.forEach(img -> {
+                    String relativePath = img.getImageUrl();
+                    if (relativePath != null && !relativePath.isEmpty() && !relativePath.startsWith("http")) {
+                        img.setImageUrl("http://localhost:8080/uploads" + relativePath);
+                    }
+                });
+
                 product.setImages(images);
 
                 // Fetch product attribute values from the correct table
@@ -103,7 +110,24 @@ public class ProductController {
         // Add images to the products
         for (Product product : products) {
             List<ProductImage> images = productImageRepository.findByProductId(product.getId());
-            product.setImages(images);
+
+            // Remove duplicates by image id (keep order)
+            LinkedHashMap<Long, ProductImage> uniqueImagesMap = new LinkedHashMap<>();
+            for (ProductImage img : images) {
+                uniqueImagesMap.put(img.getId(), img);
+            }
+            ArrayList<ProductImage> uniqueImages = new ArrayList<>(uniqueImagesMap.values());
+
+            // Set full URL if needed
+            uniqueImages.forEach(img -> {
+                String url = img.getImageUrl();
+                if (url != null && !url.isEmpty() && !url.startsWith("http")) {
+                    img.setImageUrl("http://localhost:8080/uploads" + url);
+                }
+            });
+
+            // Set unique images to product
+            product.setImages(uniqueImages);
         }
 
         return products;

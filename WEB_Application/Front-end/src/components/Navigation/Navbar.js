@@ -4,7 +4,7 @@ import "../../styles/NavigationBar/navbar.css";
 import SearchFilter from "../FilterComponents/SearchFilter";
 import { useCart } from "./Cart";
 
-const Navbar = ({ onSearch }) => {
+const Navbar = ({ onSearch, isLoggedIn, onLogout }) => {
   const { cartCount } = useCart();
 
   return (
@@ -36,8 +36,14 @@ const Navbar = ({ onSearch }) => {
       <div className="navbar_right">
         {/* User Login/Register & Profile */}
         <div className="nav_user">
-          <a href="/login" className="user_button">Sign In</a>
-          <a href="/register" className="user_button">Register</a>
+          {isLoggedIn ? (
+            <button className="user_button" onClick={onLogout}>Logout</button>
+          ) : (
+            <>
+              <a href="/login" className="user_button">Sign In</a>
+              <a href="/register" className="user_button">Register</a>
+            </>
+          )}
           <a href="/account" className="user_icon" aria-label="User Account">
             <FaUser />
           </a>

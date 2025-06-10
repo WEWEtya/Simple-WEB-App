@@ -11,30 +11,36 @@ const ProductsListPage = () => {
     const searchQuery = queryParams.get("search") || "";
     const selectedCategory = queryParams.get("category") || "";
 
+    const [products, setProducts] = useState([]);
     const [filteredProducts, setFilteredProducts] = useState([]);
 
     useEffect(() => {
-        const fetchFilteredProducts = async () => {
-            try {
-                const response = await axios.get('http://localhost:8080/api/products', {
-                    params: {
-                        search: searchQuery,
-                        category: selectedCategory
-                    }
-                });
-                setFilteredProducts(response.data);
-            } catch (error) {
-                console.error("Error fetching products:", error);
-            }
-        };
+        axios.get('http://localhost:8080/api/products')
+            .then(response => setProducts(response.data))
+            .catch(error => console.error('Error fetching products!', error));
+    }, []);
 
-        fetchFilteredProducts();
-    }, [searchQuery, selectedCategory]); // Fetch products whenever searchQuery or selectedCategory changes
+    useEffect(() => {
+        let filtered = products;
+
+        if (selectedCategory) {
+            filtered = filtered.filter(product =>
+                product.type.toLowerCase() === selectedCategory.toLowerCase()
+            );
+        }
+
+        if (searchQuery) {
+            filtered = filtered.filter(product =>
+                product.name.toLowerCase().includes(searchQuery.toLowerCase())
+            );
+        }
+
+        setFilteredProducts(filtered);
+    }, [products, searchQuery, selectedCategory]);
 
     return (
         <div>
-            <CategoryFilter selectedCategory={selectedCategory} />
-            <ProductsList products={filteredProducts} searchQuery={searchQuery} selectedCategory={selectedCategory} />
+            <ProductsList products={filteredProducts} />
         </div>
     );
 };
