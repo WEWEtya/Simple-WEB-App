@@ -10,7 +10,7 @@ import '../../styles/HomePage/heroBanner.css';
 import iphone from "../../assets/images/HomePage/HeroBanner/iphone.png";
 import airpods1 from "../../assets/images/HomePage/HeroBanner/airpods.png";
 import airpods2 from "../../assets/images/HomePage/HeroBanner/airpods_2.png";
-import image1 from "../../assets/images/AboutUs/hehehe.jpg";
+import image1 from "../../assets/images/AboutUs/placeholder.jpg";
 
 const slides = [
     {
@@ -29,7 +29,7 @@ const slides = [
     },
     {
         image: image1, 
-        title: "me", 
+        title: "Exclusive Deals", 
         discount: "|:D", 
         background: "blue_background"
     },

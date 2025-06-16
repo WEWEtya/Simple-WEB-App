@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "./Button";
 import "../../styles/AboutUs/aboutUs.css";
-import image from "../../assets/images/AboutUs/hehehe.jpg";
+import image from "../../assets/images/AboutUs/placeholder.jpg";
 
 // Content data to enhance scalability and maintainability
 const benefitsContent = {

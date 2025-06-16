@@ -2,7 +2,7 @@ import React from "react";
 import Button from "./Button";
 import "../../styles/AboutUs/aboutUs.css";
 
-import bannerImage from "../../assets/images/AboutUs/hehehe2.jpg";
+import bannerImage from "../../assets/images/AboutUs/placeholder.jpg";
 
 const bannerContent = {
   title: "Shop Smart, Live Better with RoundTable",
