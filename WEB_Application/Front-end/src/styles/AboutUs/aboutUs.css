@@ -77,6 +77,10 @@ img {
     color: #fff;
 }
 
+.button.primary {
+    display: none !important;
+}
+
 /* Features Section */
 .features {
     display: flex;
@@ -147,4 +151,72 @@ img {
 .CTASection {
     display: flex;
     justify-content: flex-end; /* Moves items to the right */
+}
+
+/* Laptops and medium screens (≤ 1024px) */
+@media (max-width: 1024px) {
+  .mainSection {
+    flex-direction: column;
+    gap: 40px;
+    margin: 80px 40px;
+  }
+  .sectionLeft, .sectionRight {
+    width: 100%;
+    text-align: center;
+  }
+  img {
+    width: 400px;
+    height: 400px;
+  }
+  h1 {
+    font-size: 36px;
+  }
+  p {
+    font-size: 16px;
+  }
+  .trending-content {
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+  }
+  .trending-item {
+    width: 80%;
+    margin-bottom: 40px;
+  }
+}
+
+/* Phones and small devices (≤ 768px) */
+@media (max-width: 768px) {
+  .mainSection {
+    flex-direction: column;
+    gap: 24px;
+    margin: 40px 10px;
+  }
+  .sectionLeft, .sectionRight {
+    width: 100%;
+    text-align: center;
+  }
+  img {
+    width: 220px;
+    height: 220px;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  p {
+    font-size: 14px;
+  }
+  .button {
+    font-size: 14px;
+    padding: 10px;
+  }
+  .trending-content {
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+  }
+  .trending-item {
+    width: 98%;
+    margin-bottom: 24px;
+  }
 }
