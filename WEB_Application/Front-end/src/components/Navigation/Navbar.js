@@ -16,20 +16,18 @@ const Navbar = ({ onSearch, isLoggedIn, onLogout }) => {
 
       {/* Center: Navigation Links and Search Bar */}
       <div className="navbar_center">
-        {/* Left part of navigation */}
-        <ul className="nav_links_left">
+        {/* Navigation Links Wrapper for grid layout */}
+        <ul className="navbar_links_wrapper">
           <li><a href="/">Shop Now</a></li>
           <li><a href="/products">Products</a></li>
-        </ul>
-
-        {/* Search Filter (between Products and About Us) */}
-        <SearchFilter onSearch={onSearch} />
-
-        {/* Right part of navigation */}
-        <ul className="nav_links_right">
           <li><a href="/about">About Us</a></li>
           <li><a href="/contact">Contact Us</a></li>
         </ul>
+
+        {/* Search Filter below links */}
+        <div className="search_filter">
+          <SearchFilter onSearch={onSearch} />
+        </div>
       </div>
 
       {/* Right: User Section */}

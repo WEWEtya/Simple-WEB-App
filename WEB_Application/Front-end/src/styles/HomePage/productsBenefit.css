@@ -61,6 +61,7 @@ h1, h2, h3, p {
     padding-left: 250px;
 }
 
+
 .small:nth-of-type(3) {
     grid-column: 3;
     grid-row: 2;
@@ -117,4 +118,48 @@ h1, h2, h3, p {
 
 .feature_item h3 {
     font-size: 24px;
+}
+
+/* Tablets (up to 1024px) */
+@media (max-width: 1024px) {
+  .custom_grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-auto-rows: 160px;
+    gap: 14px;
+    padding: 12px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .grid_item,
+  .large,
+  .medium,
+  .small {
+    min-height: 0;
+    height: 100%;
+  }
+}
+
+/* Phones (up to 768px) */
+@media (max-width: 768px) {
+  .custom_grid {
+    display: none !important;
+  }
+  .bottom_text {
+    flex-direction: column;
+    gap: 20px;
+    padding: 16px 0px;
+  }
+.left_section, .right_section {
+    margin: 0;
+    text-align: center;
+}
+  .right_section p {
+    font-size: 14px;
+  }
+  .custom_grid .overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center !important;
+  }
 }

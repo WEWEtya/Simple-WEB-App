@@ -47,3 +47,61 @@
     color: inherit;
     display: block;
 }
+
+/* ---------- Responsive Styles for Product Grid ---------- */
+
+/* Laptops and medium screens (≤ 1024px) */
+@media (max-width: 1024px) {
+  .product_grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .product_item p {
+    font-size: 20px;
+  }
+
+  .products_image {
+    width: 80%;
+  }
+}
+
+/* Tablets and smaller (≤ 768px) */
+@media (max-width: 768px) {
+  .product_grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .product_item {
+    font-size: 13px;
+  }
+
+  .product_item p {
+    font-size: 18px;
+  }
+
+  .products_image {
+    width: 90%;
+  }
+}
+
+/* Phones and small devices (≤ 480px) */
+@media (max-width: 480px) {
+  .product_grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .product_item {
+    font-size: 12px;
+  }
+
+  .product_item p {
+    font-size: 16px;
+  }
+
+  .products_image {
+    width: 100%;
+  }
+}

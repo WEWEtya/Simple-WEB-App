@@ -80,10 +80,6 @@
     height: auto;
 }
 
-.second_slide .hero_content h2 {
-    font-size: 36px;
-}
-
 .side_image.left {
     order: -1;
     margin-right: 80px;
@@ -107,4 +103,115 @@
     border: 2px solid white !important;
     width: 14px;
     height: 14px;
+}
+
+.hero_banner .title_container h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* ---------- Responsive Styles for Hero Banner ---------- */
+
+/* Laptops and medium screens (≤ 1024px) */
+@media (max-width: 1024px) {
+  .hero_banner {
+    flex-direction: column;
+    height: auto;
+    padding: 30px 20px;
+    gap: 30px;
+  }
+
+  .side_image img {
+    width: 350px;
+  }
+
+  .second_slide .side_image img {
+    width: 450px;
+  }
+
+  .hero_content {
+    max-width: 90%;
+    text-align: center;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .hero_content p {
+    font-size: 40px;
+  }
+
+  .shop_now-btn {
+    justify-content: center;
+    font-size: 18px;
+  }
+
+  .title_container i {
+    font-size: 48px;
+  }
+}
+
+/* Phones and small devices (≤ 768px) */
+@media (max-width: 768px) {
+  .hero_banner {
+    flex-direction: column;
+    padding: 20px 10px;
+    gap: 20px;
+    height: 360px; /* Even bigger slide height for mobile */
+  }
+
+  .hero_content p {
+    font-size: 16px;
+    margin-top: 5px;
+  }
+
+  .hero_content {
+    padding: 16px;
+  }
+
+  .shop_now-btn {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  .shop_now-btn i {
+    font-size: 16px;
+  }
+
+  .side_image {
+    height: 50%; /* Make sure the container fills the slide */
+    align-items: center;
+    justify-content: center;
+  }
+
+  .side_image img {
+    height: 100%;
+    width: auto;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+
+  }
+
+  .title_container {
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .title_container i {
+    font-size: 36px;
+    margin-bottom: 0;
+  }
+
+  .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    margin-bottom: 60px;
+  }
+
+  .swiper-pagination-bullet-active {
+    width: 12px;
+    height: 12px;
+  }
 }

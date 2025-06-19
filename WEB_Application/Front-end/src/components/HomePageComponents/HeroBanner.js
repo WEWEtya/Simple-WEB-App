@@ -9,7 +9,6 @@ import '../../styles/HomePage/heroBanner.css';
 
 import iphone from "../../assets/images/HomePage/HeroBanner/iphone.png";
 import airpods1 from "../../assets/images/HomePage/HeroBanner/airpods.png";
-import airpods2 from "../../assets/images/HomePage/HeroBanner/airpods_2.png";
 import image1 from "../../assets/images/AboutUs/placeholder.jpg";
 
 const slides = [
@@ -21,9 +20,9 @@ const slides = [
         icon: "fa-brands fa-apple"
     },
     {
-        image: airpods1, 
-        image1: airpods2,
+        image: airpods1,
         title: "Airpods Pro", 
+        discount: "Special Offer",
         background: "black_background",
         icon: "fa-brands fa-apple",
     },
@@ -62,12 +61,7 @@ const HeroBanner = () => {
                         <div className="side_image right">
                             <img src={slide.image} alt={slide.title} />
                         </div>
-
-                        {index === 1 && slide.image1 && (
-                            <div className="side_image left">
-                                <img src={slide.image1} alt={`${slide.title} Left`} />
-                            </div>
-                        )}
+                       
                     </div>
                 </SwiperSlide>
             ))}
