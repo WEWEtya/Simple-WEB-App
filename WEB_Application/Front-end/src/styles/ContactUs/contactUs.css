@@ -61,4 +61,51 @@
 .contact_us_item:hover {
   transform: scale(1.05);
 }
-  
+
+/* Laptops and medium screens (≤ 1024px) */
+@media (max-width: 1024px) {
+  .contact_us_container {
+    padding: 30px 20px;
+    max-width: 700px;
+    margin: 40px auto;
+  }
+  .contact_us_header h1 {
+    font-size: 32px;
+  }
+  .contact_us_item {
+    margin: 15px;
+    padding: 15px;
+    width: calc(50% - 30px);
+  }
+}
+
+/* Phones and small devices (≤ 768px) */
+@media (max-width: 768px) {
+  .contact_us_container {
+    padding: 16px 4px;
+    max-width: 98vw;
+    margin: 20px auto;
+  }
+  .contact_us_header h1 {
+    font-size: 22px;
+    text-align: center;
+  }
+  .contact_us_info {
+    flex-direction: column;
+    align-items: center;
+  }
+  .contact_us_item {
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%;
+  }
+  .contact_us_item h2 {
+    font-size: 20px;
+  }
+  .contact_us_item p {
+    font-size: 14px;
+  }
+  .contact_us_item a {
+    font-size: 14px;
+  }
+}
