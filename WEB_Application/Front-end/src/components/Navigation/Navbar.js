@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaShoppingCart, FaUser } from "react-icons/fa";
 import "../../styles/NavigationBar/navbar.css";
 import SearchFilter from "../FilterComponents/SearchFilter";
@@ -6,6 +6,11 @@ import { useCart } from "./Cart";
 
 const Navbar = ({ onSearch, isLoggedIn, onLogout }) => {
   const { cartCount } = useCart();
+  const [showUserMenu, setShowUserMenu] = useState(false);
+
+  const handleUserIconClick = () => {
+    setShowUserMenu((prev) => !prev); // Toggle open/close
+  };
 
   return (
     <nav className="navbar">
@@ -32,19 +37,26 @@ const Navbar = ({ onSearch, isLoggedIn, onLogout }) => {
 
       {/* Right: User Section */}
       <div className="navbar_right">
-        {/* User Login/Register & Profile */}
         <div className="nav_user">
-          {isLoggedIn ? (
-            <button className="user_button" onClick={onLogout}>Logout</button>
-          ) : (
-            <>
+          <span
+            className="user_icon"
+            onClick={handleUserIconClick}
+            tabIndex={0}
+            style={{ cursor: "pointer" }}
+          >
+            <FaUser />
+          </span>
+          {showUserMenu && !isLoggedIn && (
+            <div className="user-menu-dropdown">
               <a href="/login" className="user_button">Sign In</a>
               <a href="/register" className="user_button">Register</a>
-            </>
+            </div>
           )}
-          <a href="/account" className="user_icon" aria-label="User Account">
-            <FaUser />
-          </a>
+          {showUserMenu && isLoggedIn && (
+            <div className="user-menu-dropdown">
+              <button className="user_button" onClick={onLogout}>Logout</button>
+            </div>
+          )}
         </div>
         {/* Shopping Cart */}
         <div className="cart">
